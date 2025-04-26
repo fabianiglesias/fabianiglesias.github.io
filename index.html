@@ -1,295 +1,280 @@
 <!DOCTYPE html>
-
 <html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fabián Iglesias</title>
+    <link rel="icon" href="favicon.png" type="image/png">
 
-    <head>
-        <meta charset="utf-8"/>
-        <title>Fabián Iglesias</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta content="width=device-width, initial-scale=1" name="viewport"/>
-        <meta content="Fabián Iglesias" name="author"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-         <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-         
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="css/layout.min.css"    rel="stylesheet" type="text/css"/>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
 
-	<link rel="icon" href="favicon.png" type="image/png">
-    </head>
+    <!-- Custom CSS -->
+    <style>
+    :root {
+        --font-primary: 'Source Sans Pro', sans-serif;
+        --font-signature: 'Jim Nightshade', cursive;
+        --bg-light: #ffffff;
+        --bg-dark: #121212;
+        --text-color: #222;
+        --text-light: #ddd;
+        --accent-color: #339af0;
+    }
 
+    .dark-mode {
+        background-color: var(--bg-dark);
+        color: var(--text-light);
+    }
 
-  <body>
+    body {
+        font-family: var(--font-primary);
+        line-height: 1.6;
+        transition: background-color 0.3s, color 0.3s;
+    }
 
-    <nav class="navbar navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"></a>         
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#education">Education</a></li> 
-	    <li><a href="#teaching">Teaching</a></li> 
-            <li><a href="#research">Research</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#media">Media</a></li> 
-            <li><a href="https://docs.google.com/document/d/1Jm1c65b6_XOBf7Tuq4jjBJaJQNg07OLaydfwsFONkSI/">CV (es)</a></li>
-            <li><a href="https://docs.google.com/document/d/128vypiQk91_1Jka40EoBf6eXiEHMbzNg/">CV (en)</a></li>     
-          </ul>
-         </div>
-       </div>
-     </nav>
+    a {
+        color: var(--accent-color);
+        text-decoration: none;
+    }
 
-  <div class="bg-color-sky-light">
-   <div class="bg-color-white ">
+    .signature {
+        font-family: var(--font-signature);
+        font-size: 2.3rem;
+    }
+
+    .watermark-vertical {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        transform-origin: center;
+        background: rgba(0, 0, 0, 0.9);
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 12px;
+        padding: 2px 6px;
+        border-radius: 4px;
+        white-space: nowrap;
+        pointer-events: none;
+    }
+
+    .rounded-image {
+        border-radius: 15px;
+    }
+    
+    .justified-text {
+        text-align: justify;
+    }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-      <div class="row">
-
-        <div class="col-md-8">
-          <img class="img-responsive" src="head.webp" alt="" /><br />
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#teaching">Teaching</a></li>
+                <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+                <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#media">Media</a></li> 
+                <li class="nav-item"><a class="nav-link" href="https://docs.google.com/document/d/1Jm1c65b6_XOBf7Tuq4jjBJaJQNg07OLaydfwsFONkSI/">CV (es)</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://docs.google.com/document/d/128vypiQk91_1Jka40EoBf6eXiEHMbzNg/">CV (en)</a></li>
+            </ul>
+            <button id="theme-toggle" class="btn btn-outline-light ms-2">
+                <i class="bi bi-moon"></i>
+            </button>
         </div>
+    </div>
+</nav>
 
+<div class="container my-4">
+    <div class="row align-items-center">
+        <div class="col-md-8 position-relative">
+            <img src="head.webp" class="img-fluid rounded-image" alt="Profile Image">
+        </div>
         <div class="col-md-4">
-          <div style="font-family: Jim Nightshade;font-size: 36px;">
-            <b>Fabián A. Iglesias Quilodrán</b>
-          </div>
-
-          <div style="font-family: Source Sans Pro; font-size: 16px;">
-          <br />
-         
-          <p>
-            Mechanical Engineer<br />
-	    Master of Science in Engineering<br />
-            University of La Frontera<br />
-            Av. Francisco Salazar 01145<br />
-            Temuco 4811230<br />
-            Chile 🇨🇱<br />
-	    <dd><a href="https://orcid.org/0000-0003-1012-8254">ORCID</a></dd>
-            <dd><a href="https://scholar.google.com/citations?hl=en&user=Z40xYFUAAAAJ">Google Scholar</a></dd>
-	    <dd><a href="https://fabianiglesias.cl/archivo">Blog</a></dd>
-          </p>
-          <p>📧 fabian.iglesias 🏫 ufrontera.cl<br /></p>
-          <br />
-          </div>
-        </div>
-      </div>
-     </div>
-     </div>
-
-<div style="font-family:  Source Sans Pro;font-size: 16px;">
-  <div class="bg-color-sky-light">
-   <div class="bg-color-white ">
-    <div class="container">
-      <div class="row">	<div class="col-md-8" style="text-align:justify">
-
-            <p>I am a Researcher at <a href="https://www.ufro.cl/" target="_blank">University of La Frontera</a> (UFRO) and currently collaborate on research activities under the supervision of <a href="https://sites.google.com/view/eduardodiez/home/"target="_blank">Prof. Dr. Ing. Eduardo Diez</a>, Professor at the Department of Mechanical Engineering. Recently, I have been working on a research project that focuses on surface roughness analysis using computer vision algorithms.</p>
-	    <p>My research interests lie in Automation, Robotics, and Artificial Intelligence applied to engineering. As a very curious person, I am always eager to learn more about new advances in science and technology, particularly those that can be applied to real-world engineering problems.</p>
-	    <p>In mid-2018, I completed an internship in Germany with the Ping-DAAD program at Ruhr-Universität Bochum (RUB), where I took courses in renewable energy.</p>
-            <p>In addition to my studies and research work, I am a member of DIVCiencia, an organization that promotes scientific communication in Spanish. We organize scientific talks and coffees in the La Araucanía region. I am also the creator of podcasts about science at <a href="https://podcast.fabianiglesias.cl/"target="_blank">Punto Científico</a>.
+            <br>
+            <h1 class="signature"><b>Fabián A. Iglesias Quilodrán</b></h1>
+            <p>
+                Mechanical Engineer<br>
+                Master of Science in Engineering<br>
+                University of La Frontera<br>
+                Av. Francisco Salazar 01145<br>
+                Temuco 4811230, Chile 🇨🇱<br>
+                <dd><a href="https://orcid.org/0000-0003-1012-8254">ORCID</a></dd>
+                <dd><a href="https://scholar.google.com/citations?hl=en&user=Z40xYFUAAAAJ">Google Scholar</a></dd>
+	            <dd><a href="https://fabianiglesias.cl/archivo">Blog</a></dd>
+                📧 fabian.iglesias 🏫 ufrontera.cl
+                
             </p>
-        
-
-	</div>
         </div>
-      </div>
-     </div>
-     </div>
+    </div>
 
-
-    <div class="bg-light" style="display: block;">
-     <div class="content-md container">
-      <div class="row">
-        <div class="col-md-8">
-          <h2 id="education">🎓 Education</h2>
-
-          <strong>MSc in Engineering Student</strong><br />
-          <p>
-            University of La Frontera (2021 – 2023, Chile)<br />
-          </p>
-		
-          <strong>BSc in Mechanical Engineering</strong><br />
-          <p>
-            University of La Frontera (2015 – 2021, Chile)<br />
-          </p>
-
-          <strong>Internship in Germany</strong><br />
-          <p>
-            Ruhr-Universität Bochum (07.2017 – 07.2018, Germany)<br  />
-	    Ping-DAAD Program
-          </p>
-      
+    <div class="row">
+        <div class="col-md-8 justified-text">
+            <section class="my-5">
+                <br>
+                <p>I am a Researcher at <a href="https://www.ufro.cl/" target="_blank">University of La Frontera</a> (UFRO) and currently collaborate on research activities under the supervision of <a href="https://sites.google.com/view/eduardodiez/home/"target="_blank">Prof. Dr. Ing. Eduardo Diez</a>, Professor at the Department of Mechanical Engineering. Recently, I have been working on a research project that focuses on surface roughness analysis using computer vision algorithms.</p>
+	            <p>My research interests lie in Automation, Robotics, and Artificial Intelligence applied to engineering. As a very curious person, I am always eager to learn more about new advances in science and technology, particularly those that can be applied to real-world engineering problems.</p>
+	            <p>In mid-2018, I completed an internship in Germany with the Ping-DAAD program at Ruhr-Universität Bochum (RUB), where I took courses in renewable energy.</p>
+                <p>In addition to my studies and research work, I am a member of DIVCiencia, an organization that promotes scientific communication in Spanish. We organize scientific talks and coffees in the La Araucanía region. I am also the creator of podcasts about science at <a href="https://podcast.fabianiglesias.cl/"target="_blank">Punto Científico</a>.</p>
+            </section>
         </div>
-      </div>
-     </div>
     </div>
 
-    <div class="bg-light" style="display: block;">
-     <div class="content-md container" style="text-align:justify">
-      <div class="row">
-        <div class="col-md-8">
-          <h2 id="teaching">👨‍🏫 Teaching</h2>
-		<br />
-		<img class="img-responsive" src="teaching.webp" alt="" />
-		Teaching how to measure roughness in the mechanical workshop, wearing masks due to the COVID-19 pandemic | Photo: Eduardo Diez <br /><br />
-          <strong
-            >University of La Frontera</strong
-          ><br />
-          <p>
-            ➤ Introduction to Industrial Computer Vision (Spring 2023 - Fall 2024)<br />
-          </p>		
-          <strong
-            >University of La Frontera (Teaching Assistant)</strong
-          ><br />
-          <p>
-            ➤ Production Automation, taught by Professor Pablo Sanhueza (Spring 2021 – Fall 2022)<br />
-            ➤ Production Automation, taught by Professor Eduardo Diez (Fall 2020 – Fall 2021) (Spring 2022)<br />
-            ➤ Manufacturing Processes I, taught by Professor Eduardo Diez (Fall 2019 – Spring 2022)<br />
-            ➤ Physics I, taught by Professor Mauricio Santibañez (Fall 2016)<br />
-          </p>
-        
+    <div class="row">
+        <div class="col-md-8 justified-text">
+            <section id="education" class="my-5">
+                <h2>🎓 Education</h2>
+                <strong>MSc in Engineering Student</strong><br>
+                University of La Frontera (2021 – 2023, Chile)<br><br>
+		        <strong>BSc in Mechanical Engineering</strong><br>
+                University of La Frontera (2015 – 2021, Chile)<br><br>
+                <strong>Internship in Germany</strong><br>
+                Ruhr-Universität Bochum (07.2017 – 07.2018, Germany)<br>Ping-DAAD Program
+            </section>
         </div>
-      </div>
-     </div>
     </div>
 
-    <div class="bg-light" style="display: block;">
-     <div class="content-md container" style="text-align:justify">	    
-      <div class="row">
-        <div class="col-md-8">
-          <h2 id="research">📊 Research</h2>
-		<br />
-		<img class="img-responsive" src="mechatronics_lab.webp" alt="" />
-		Mechatronics Lab | UFRO
-		<br />
-		<br />
-		
-          <strong
-            >➤ Undergraduate Work: Surface Roughness Model in Robotic Sanding Process</strong ><br />
-          <p>
-            Research focused on modeling the behavior of roughness in robotic sanding process of radiata pine wood parts, within the framework of R&D project FONDEF IDeA I+D ID18I10042, under direction Dr. Eduardo Diez.<br />
-          <br />
-	  <strong
-            >➤ Master's Thesis: Influence of the Operating Parameters on the Surface Quality of Wood Parts Processed by Robotic Sanding.</strong ><br />
-          <p>
-            The focus of this work was on investigating the influence of operating parameters on the surface quality of MDF parts processed by robotic sanding. To evaluate the surface roughness, computer vision techniques and algorithms were used and developed. | Thesis Supervisor: Dr. Eduardo Diez.<br />
-		<br />
-		<br />
-	<strong>RESEARCH PROJECTS</strong><br /><br />
-		➤ [IT21i0069] Desarrollo y validación de una célula inteligente de lijado y pulido robotizado para entornos de manufactura avanzada. 
-		  <br />	
-		  Position: Project Engineer (2022 - 2025) | (dec 2022 - jun 2025) | Funded by FONDEF ANID.<br /><br />
-		➤ [VIU22P0027] RuGo: Solución tecnológica integral para la evaluación de la calidad superficial en productos de madera mediante algoritmos basados en imágenes.
-		  <br />	
-		  Position: Project Director | (dec 2022 - feb 2024) | Funded by VIU ANID.<br /><br />
-		➤ Desarrollo de un sistema de visión para evaluar la calidad superficial de piezas de madera lijadas en entornos de fabricación inteligentes.
-		  <br />	
-		  Position: Project Engineer | (jul 2022 - dec 2022) | Funded by I2030 MACROFACULTAD Project - CORFO.<br /><br />
-		➤ [ID18I10042] Desarrollo de una herramienta terminal para operaciones de lijado robotizado inteligente con aplicación a la manufactura de productos de madera de alto valor agregado.
-		  <br />	
-		  Position: Student (2020 - 2021) | (2018 - 2021) | Funded by FONDEF ANID.<br /><br />
-		  
-		  
-		  
+    <div class="row">
+        <div class="col-md-8 justified-text">
+            <section id="teaching" class="my-5">
+                <h2>👨‍🏫 Teaching</h2><br>
+                <img src="teaching.webp" class="img-fluid copyright" data-copyright="© Eduardo Diez">
+                Teaching how to measure roughness in the mechanical workshop, wearing masks due to the COVID-19 pandemic.<br><br>
+                  <strong>University of La Frontera</strong><br>
+                  ➤ Introduction to Industrial Computer Vision (Spring 2023 - Fall 2024)<br><br>
+                  <strong>University of La Frontera (Teaching Assistant)</strong><br>
+                  ➤ Research Methodology, taught by Professor Eduardo Diez (Fall 2024 - 2025)<br>
+                  ➤ Production Automation, taught by Professor Pablo Sanhueza (Spring 2021 – Fall 2022)<br>
+                  ➤ Production Automation, taught by Professor Eduardo Diez (Fall 2020 – Fall 2021) (Spring 2022)<br>
+                  ➤ Manufacturing Processes I, taught by Professor Eduardo Diez (Fall 2019 – Spring 2022)<br>
+                  ➤ Physics I, taught by Professor Mauricio Santibañez (Fall 2016)<br>
+            </section>
         </div>
-      </div>
-     </div>
     </div>
-	
-	
-   <div class="bg-light" style="display: block;">
-     <div class="content-md container" style="text-align:justify">
-      <div class="row">
-        <div class="col-md-8">
-          <h2 id="publications">📜 Publications</h2>
-<strong
-            >[Reseach Articles]</strong
-          ><br />
-<br />
-          <p>
-            ➤ Iglesias, F., Aguilera, A., Rolleri, A., Wentzel, M., Diez, E.: 
-		  Impact of surface roughness on the wettability of MDF processed by robotic sanding. 
-		  European Journal of Wood and Wood Products. (2025). 
-		  🔗 <a href="https://doi.org/10.1007/s00107-025-02231-1" target="_blank">https://doi.org/10.1007/s00107-025-02231-1</a><br />
-          </p>
-          <p>
-            ➤ Iglesias, F., Aguilera, A., Padilla, A., Vizán, A., Diez, E.: 
-		  Application of computer vision techniques to estimate surface roughness on wood-based sanded workpieces. 
-		  Measurement. (2023). 
-		  🔗 <a href="https://doi.org/10.1016/j.measurement.2023.113917" target="_blank">https://doi.org/10.1016/j.measurement.2023.113917</a><br />
-          </p><br />
-          <strong
-            >[Conference Articles]</strong
-          ><br />
-<br />
-          <p>
-            ➤ Iglesias, F., Aguilera, A., Padilla, A., Madaf, M., Diez, E.: 
-		  Optical Evaluation of Surface Roughness in Wood Parts Processed by Robotic Sanding. 
-		  Proceedings of the XV Ibero-American Congress of Mechanical Engineering. IACME 2022. Springer, Cham. (2023). 
-		  🔗 <a href="https://doi.org/10.1007/978-3-031-38563-6_52" target="_blank">https://doi.org/10.1007/978-3-031-38563-6_52</a><br />
-          </p>
-	  <p>
-            ➤ Iglesias Quilodrán, F., Aguilera León, A., Padilla Bernedo, A., Madaf Poblete, M., Diez Cifuentes, E.: 
-		  Evaluación óptica de la rugosidad superficial en piezas de madera procesadas mediante lijado robotizado. 
-		  XV Congreso Iberoamericano de Ingeniería Mecánica. Universidad Politécnica de Madrid. (2022). 
-		  🔗 <a href="https://doi.org/10.5944/bicim2022.119" target="_blank">https://doi.org/10.5944/bicim2022.119</a><br />
-          </p>
-        
+
+    <div class="row">
+        <div class="col-md-8 justified-text">
+            <section id="research" class="my-5">
+                <h2>📊 Research</h2><br>
+                <img src="mechatronics_lab.webp" class="img-fluid">
+                Mechatronics Lab | UFRO.<br><br>
+                  <strong>➤ Undergraduate Work: Surface Roughness Model in Robotic Sanding Process.</strong><br>
+                  Research focused on modeling the behavior of roughness in robotic sanding process of radiata pine wood parts, within the framework of R&D project FONDEF IDeA I+D ID18I10042, under direction Dr. Eduardo Diez.<br><br>	
+                  <strong>➤ Master's Thesis: Influence of the Operating Parameters on the Surface Quality of Wood Parts Processed by Robotic Sanding.</strong><br>
+                  The focus of this work was on investigating the influence of operating parameters on the surface quality of MDF parts processed by robotic sanding. To evaluate the surface roughness, computer vision techniques and algorithms were used and developed. | Thesis Supervisor: Dr. Eduardo Diez.<br><br>	
+                  <strong>RESEARCH PROJECTS</strong><br><br>
+                  ➤ [IT21i0069] Desarrollo y validación de una célula inteligente de lijado y pulido robotizado para entornos de manufactura avanzada. 
+                  <br>	
+                  Position: Project Engineer (2022 - 2025) | (dec 2022 - jun 2025) | Funded by FONDEF ANID.<br><br>
+                  ➤ [VIU22P0027] RuGo: Solución tecnológica integral para la evaluación de la calidad superficial en productos de madera mediante algoritmos basados en imágenes.
+                  <br>	
+                  Position: Project Director | (dec 2022 - feb 2024) | Funded by VIU ANID.<br><br>
+                  ➤ Desarrollo de un sistema de visión para evaluar la calidad superficial de piezas de madera lijadas en entornos de fabricación inteligentes.
+                  <br>	
+                  Position: Project Engineer | (jul 2022 - dec 2022) | Funded by I2030 MACROFACULTAD Project - CORFO.<br><br>
+                  ➤ [ID18I10042] Desarrollo de una herramienta terminal para operaciones de lijado robotizado inteligente con aplicación a la manufactura de productos de madera de alto valor agregado.
+                  <br>	
+                  Position: Student (2020 - 2021) | (2018 - 2021) | Funded by FONDEF ANID.<br><br>
+            </section>
         </div>
-      </div>
-     </div>
-    </div>
-	
-
-    <div class="bg-light" style="display: block;">
-     <div class="content-md container">	    
-      <div class="row">
-        <div class="col-md-8">
-          <h2 id="media">📺 Media</h2>
-          <br />
-          <a title="Exploradores" href="https://www.youtube.com/watch?v=lNejMBLfgTY"><img class="img-responsive" src="ufro_manufactura_madera.png" alt="" /></a>
-2021 – UFRO | Tecnologías para manufacturar productos de madera de alto valor (24 HORAS)
-
-
-    </div>
-      </div>
-     </div>
     </div>
 
-
-	    <br />
-	    <br />
-
-    <div class="bg-light" style="display: block;">
-     <div class="content-md container">    
-	    
-      <div class="row">
-        <div class="col-md-8"></div>
-        <br />
-        <a
-          href="https://github.com/mavroudisv/plain-academic"
-          target="_blank"
-          style="color: #7C735E"
-          >[Template]</a
-        >
-        <br />
-        <br />
-        <br />
-      </div>
+    <div class="row">
+        <div class="col-md-8 justified-text">
+            <section id="publications" class="my-5">
+                <h2>📜 Publications</h2><br>
+                  <strong>[Reseach Articles]</strong><br><br>	
+                    ➤ Iglesias, F., Aguilera, A., Rolleri, A., Wentzel, M., Diez, E.: 
+                    Impact of surface roughness on the wettability of MDF processed by robotic sanding. 
+                    European Journal of Wood and Wood Products. (2025). 
+                    🔗 <a href="https://doi.org/10.1007/s00107-025-02231-1" target="_blank">https://doi.org/10.1007/s00107-025-02231-1</a><br>
+                    <br>
+                    ➤ Iglesias, F., Aguilera, A., Padilla, A., Vizán, A., Diez, E.: 
+		            Application of computer vision techniques to estimate surface roughness on wood-based sanded workpieces. 
+		            Measurement. (2023). 
+		            🔗 <a href="https://doi.org/10.1016/j.measurement.2023.113917" target="_blank">https://doi.org/10.1016/j.measurement.2023.113917</a><br>
+                    <br>
+                  <strong>[Conference Articles]</strong><br><br>
+                    ➤ Iglesias, F., Aguilera, A., Padilla, A., Madaf, M., Diez, E.: 
+		            Optical Evaluation of Surface Roughness in Wood Parts Processed by Robotic Sanding. 
+		            Proceedings of the XV Ibero-American Congress of Mechanical Engineering. IACME 2022. Springer, Cham. (2023). 
+		            🔗 <a href="https://doi.org/10.1007/978-3-031-38563-6_52" target="_blank">https://doi.org/10.1007/978-3-031-38563-6_52</a><br>
+                    <br>
+                    ➤ Iglesias Quilodrán, F., Aguilera León, A., Padilla Bernedo, A., Madaf Poblete, M., Diez Cifuentes, E.: 
+		            Evaluación óptica de la rugosidad superficial en piezas de madera procesadas mediante lijado robotizado. 
+		            XV Congreso Iberoamericano de Ingeniería Mecánica. Universidad Politécnica de Madrid. (2022). 
+		            🔗 <a href="https://doi.org/10.5944/bicim2022.119" target="_blank">https://doi.org/10.5944/bicim2022.119</a>
+            </section>
+        </div>
     </div>
-     </div>
+
+    <div class="row">
+        <div class="col-md-8 justified-text">
+            <section id="media" class="my-5">
+                <h2>📺 Media</h2><br>
+                <div class="row">
+                    <!-- Primera columna -->
+                    <div class="col-md-6 mb-4">
+                        <a href="https://www.madera21.cl/innovacion-en-la-manufactura-de-productos-de-madera-colaboracion-entre-cientificos-de-la-ufro-y-woodnic/" target="_blank">
+                            <img class="img-fluid" src="woodnic_collaboration.png" alt="Colaboración entre científicos de la UFRO y Woodnic">
+                        </a>
+                        <p>2023 – Innovación en la manufactura de productos de madera: Colaboración entre científicos de la UFRO y Woodnic (Madera21)</p>
+                    </div>
+                    
+                    <!-- Segunda columna -->
+                    <div class="col-md-6 mb-4">
+                        <a title="Exploradores" href="https://www.youtube.com/watch?v=lNejMBLfgTY">
+                            <img class="img-fluid copyright" data-copyright="© Televisión Nacional de Chile" src="ufro_manufactura_madera.png">
+                        </a>
+                        <p>2021 – UFRO | Tecnologías para manufacturar productos de madera de alto valor (24 HORAS)</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
+
 </div>
 
-    <!-- /.container -->
-  </body>
+<footer class="text-center py-4 bg-dark text-light">
+    <p>&copy; 2025 Fabián Iglesias. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    themeToggle.innerHTML = body.classList.contains('dark-mode') ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon"></i>';
+});
+
+document.querySelectorAll('img.copyright').forEach(img => {
+    const watermark = document.createElement('div');
+    watermark.className = 'watermark-vertical';
+    watermark.textContent = img.getAttribute('data-copyright');
+
+    const wrapper = document.createElement('div');
+    wrapper.style.position = 'relative';
+    wrapper.style.display = 'inline-block';
+
+    img.parentNode.insertBefore(wrapper, img);
+    wrapper.appendChild(img);
+    wrapper.appendChild(watermark);
+});
+</script>
+</body>
 </html>
