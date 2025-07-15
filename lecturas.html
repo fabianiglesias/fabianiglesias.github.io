@@ -89,14 +89,13 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-dark">
   <div class="container">
-    <a class="navbar-brand" href="/social">Social | Fabián Iglesias</a>
+    <a class="navbar-brand" href="/social">Lecturas | Fabián Iglesias</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/fabianiglesias.cl">Bluesky</a></li>
       </ul>
       <button id="theme-toggle" class="btn btn-outline-light ms-2">
         <i class="bi bi-moon"></i>
@@ -185,20 +184,30 @@
     themeToggle.innerHTML = isDark ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon"></i>';
   });
 
-  const toggleIcons = (selector) => {
-    document.querySelectorAll(selector).forEach(el => {
-      const icon = el.querySelector('i.rotate');
-      const targetId = el.getAttribute('data-bs-target');
-      const collapse = document.querySelector(targetId);
-      if (collapse && icon) {
-        collapse.addEventListener('show.bs.collapse', () => icon.classList.add('down'));
-        collapse.addEventListener('hide.bs.collapse', () => icon.classList.remove('down'));
-      }
-    });
-  };
+  // Flechas para secciones de año
+  document.querySelectorAll('.section-header').forEach(header => {
+    const icon = header.querySelector('i.rotate');
+    const targetId = header.getAttribute('data-bs-target');
+    const collapseEl = document.querySelector(targetId);
 
-  toggleIcons('.section-header');
-  toggleIcons('.book-title');
+    if (collapseEl) {
+      collapseEl.addEventListener('show.bs.collapse', () => icon.classList.add('down'));
+      collapseEl.addEventListener('hide.bs.collapse', () => icon.classList.remove('down'));
+    }
+  });
+
+  // Flechas solo para libros individuales
+  document.querySelectorAll('.book-title').forEach(title => {
+    const icon = title.querySelector('i.rotate');
+    const targetId = title.getAttribute('data-bs-target');
+    const collapseEl = document.querySelector(targetId);
+
+    if (collapseEl) {
+      collapseEl.addEventListener('show.bs.collapse', () => icon.classList.add('down'));
+      collapseEl.addEventListener('hide.bs.collapse', () => icon.classList.remove('down'));
+    }
+  });
 </script>
+
 </body>
 </html>
