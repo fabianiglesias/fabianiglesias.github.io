@@ -39,19 +39,23 @@
       text-decoration: none;
     }
 
+    .content-narrow {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
     h2 {
       margin-top: 2rem;
       border-bottom: 2px solid var(--accent-color);
       padding-bottom: 0.25rem;
     }
 
-    ul.reading-list {
-      list-style: none;
-      padding-left: 0;
+    .reading-item {
+      margin-bottom: 1rem;
     }
 
-    .reading-list li {
-      margin-bottom: 0.5rem;
+    .reading-title {
+      cursor: pointer;
     }
 
     .icon-book {
@@ -60,6 +64,10 @@
 
     .icon-ebook {
       color: #66bb6a;
+    }
+
+    .collapse {
+      margin-top: 0.5rem;
     }
   </style>
 </head>
@@ -82,32 +90,69 @@
   </div>
 </nav>
 
-<div class="container my-5">
+<div class="container my-5 content-narrow">
   <h1 class="text-center mb-5">Lista de Lecturas</h1>
 
   <h2>2025</h2>
-  <ul class="reading-list">
-    <li><i class="bi bi-book icon-book me-2"></i><strong>La sociedad del cansancio</strong> – Byung-Chul Han</li>
-    <li><i class="bi bi-tablet icon-ebook me-2"></i><strong>The Ministry for the Future</strong> – Kim Stanley Robinson <em>(eBook)</em></li>
-    <li><i class="bi bi-book icon-book me-2"></i><strong>How to Do Nothing</strong> – Jenny Odell</li>
-  </ul>
+
+  <div class="reading-item">
+    <div class="reading-title" data-bs-toggle="collapse" data-bs-target="#desc1">
+      <i class="bi bi-book icon-book me-2"></i><strong>La sociedad del cansancio</strong> – Byung-Chul Han
+    </div>
+    <div id="desc1" class="collapse">
+      <p>Una reflexión breve pero potente sobre la autoexplotación en tiempos de hiperproductividad. Me ayudó a identificar dinámicas internas de agotamiento moderno.</p>
+    </div>
+  </div>
+
+  <div class="reading-item">
+    <div class="reading-title" data-bs-toggle="collapse" data-bs-target="#desc2">
+      <i class="bi bi-tablet icon-ebook me-2"></i><strong>The Ministry for the Future</strong> – Kim Stanley Robinson <em>(eBook)</em>
+    </div>
+    <div id="desc2" class="collapse">
+      <p>Un relato ambicioso sobre el cambio climático desde múltiples ángulos. Aunque denso en partes, me dejó pensando en soluciones reales para futuros posibles.</p>
+    </div>
+  </div>
+
+  <div class="reading-item">
+    <div class="reading-title" data-bs-toggle="collapse" data-bs-target="#desc3">
+      <i class="bi bi-book icon-book me-2"></i><strong>How to Do Nothing</strong> – Jenny Odell
+    </div>
+    <div id="desc3" class="collapse">
+      <p>Una crítica al capitalismo de la atención. Me inspiró a reconectar con lo local y lo lento, más allá de la productividad.</p>
+    </div>
+  </div>
 
   <h2>2024</h2>
-  <ul class="reading-list">
-    <li><i class="bi bi-book icon-book me-2"></i><strong>El infinito en un junco</strong> – Irene Vallejo</li>
-    <li><i class="bi bi-tablet icon-ebook me-2"></i><strong>Sapiens</strong> – Yuval Noah Harari <em>(eBook)</em></li>
-    <li><i class="bi bi-book icon-book me-2"></i><strong>La utilidad de lo inútil</strong> – Nuccio Ordine</li>
-  </ul>
 
-  <h2>2023</h2>
-  <ul class="reading-list">
-    <li><i class="bi bi-tablet icon-ebook me-2"></i><strong>El hombre en busca de sentido</strong> – Viktor Frankl <em>(eBook)</em></li>
-    <li><i class="bi bi-book icon-book me-2"></i><strong>Walden</strong> – Henry David Thoreau</li>
-    <li><i class="bi bi-book icon-book me-2"></i><strong>1984</strong> – George Orwell</li>
-  </ul>
+  <div class="reading-item">
+    <div class="reading-title" data-bs-toggle="collapse" data-bs-target="#desc4">
+      <i class="bi bi-book icon-book me-2"></i><strong>El infinito en un junco</strong> – Irene Vallejo
+    </div>
+    <div id="desc4" class="collapse">
+      <p>Una historia fascinante del libro como objeto cultural. Lo leí con calma, saboreando cada conexión entre pasado y presente lector.</p>
+    </div>
+  </div>
+
+  <div class="reading-item">
+    <div class="reading-title" data-bs-toggle="collapse" data-bs-target="#desc5">
+      <i class="bi bi-tablet icon-ebook me-2"></i><strong>Sapiens</strong> – Yuval Noah Harari <em>(eBook)</em>
+    </div>
+    <div id="desc5" class="collapse">
+      <p>Una panorámica impresionante de la historia humana. Aunque popularizado, sigue siendo una lectura provocadora y útil para repensar el presente.</p>
+    </div>
+  </div>
+
+  <div class="reading-item">
+    <div class="reading-title" data-bs-toggle="collapse" data-bs-target="#desc6">
+      <i class="bi bi-book icon-book me-2"></i><strong>La utilidad de lo inútil</strong> – Nuccio Ordine
+    </div>
+    <div id="desc6" class="collapse">
+      <p>Un manifiesto necesario para reivindicar el valor del saber por el saber. Me ayudó a reafirmar mi amor por lo aparentemente improductivo.</p>
+    </div>
+  </div>
 </div>
 
-<footer class="text-center py-4 bg-dark text-light">
+<footer class="text-center py-4 bg-dark text-light mt-5">
   <p>&copy; 2025 Fabián Iglesias. All Rights Reserved.</p>
 </footer>
 
