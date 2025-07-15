@@ -1,63 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lecturas | Fabián Iglesias</title>
-  <link rel="icon" href="favicon.png" type="image/png">
-
+  <link rel="icon" href="favicon.png" type="image/png" />
+  
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
+  
   <!-- Bootstrap & Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet" />
 
-  <!-- Custom Styles -->
   <style>
     :root {
       --font-primary: 'Source Sans Pro', sans-serif;
-      --bg-dark: #1f1f1f;
-      --text-light: #ccc;
-      --gray: #444;
-      --gray-dark: #2a2a2a;
+      --light-bg: #f8f9fa;
+      --light-text: #212529;
+      --dark-bg: #1f1f1f;
+      --dark-text: #ccc;
+      --accent: #999;
     }
 
     body {
       font-family: var(--font-primary);
-      background-color: var(--bg-dark);
-      color: var(--text-light);
+      background-color: var(--light-bg);
+      color: var(--light-text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      background-color: var(--dark-bg) !important;
+      color: var(--dark-text) !important;
+    }
+
+    .dark-mode .year-header,
+    .dark-mode .reading-item {
+      background-color: #2b2b2b !important;
+      color: var(--dark-text) !important;
+    }
+
+    .dark-mode .navbar,
+    .dark-mode footer {
+      background-color: #111 !important;
+    }
+
+    .navbar,
+    footer {
+      background-color: #343a40;
+      color: white;
     }
 
     .content-narrow {
-      max-width: 720px;
+      max-width: 700px;
       margin: auto;
-    }
-
-    a {
-      color: #aaa;
-      text-decoration: none;
+      width: 100%;
     }
 
     .year-header {
-      background-color: var(--gray-dark);
-      padding: 0.75rem 1rem;
+      background-color: #e0e0e0;
       border-radius: 8px;
-      cursor: pointer;
+      padding: 0.75rem 1rem;
       font-weight: bold;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      cursor: pointer;
       margin-bottom: 0.5rem;
     }
 
     .reading-item {
-      background-color: var(--gray);
+      background-color: #ddd;
       border-radius: 6px;
       padding: 0.75rem 1rem;
       margin-bottom: 0.5rem;
@@ -65,7 +82,9 @@
 
     .reading-title {
       cursor: pointer;
-      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .rotate {
@@ -76,32 +95,22 @@
       transform: rotate(90deg);
     }
 
-    .icon-book, .icon-ebook {
-      color: #bbb;
-    }
-
     footer {
-      background-color: var(--gray-dark);
-      color: #888;
       text-align: center;
       padding: 1rem;
       margin-top: auto;
     }
 
-    .btn-outline-light {
-      border-color: #666;
-      color: #ccc;
-    }
-
-    .btn-outline-light:hover {
-      background-color: #444;
+    .icon-book,
+    .icon-ebook {
+      color: var(--accent);
     }
   </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark">
   <div class="container">
     <a class="navbar-brand" href="/social">Social | Fabián Iglesias</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
@@ -119,36 +128,35 @@
   </div>
 </nav>
 
-<!-- Main Content -->
-<div class="container my-5 content-narrow">
-  <h1 class="text-center mb-5">Lista de Lecturas</h1>
+<!-- Contenido principal -->
+<main class="container my-5 content-narrow">
+  <h1 class="text-center mb-5">Lecturas</h1>
 
   <!-- Año 2025 -->
   <div class="mb-3">
-    <div class="year-header" data-bs-toggle="collapse" data-bs-target="#year2025" aria-expanded="false">
+    <div class="year-header" data-bs-toggle="collapse" data-bs-target="#year2025">
       <span>2025</span>
       <i class="bi bi-chevron-right rotate" id="icon2025"></i>
     </div>
     <div class="collapse" id="year2025">
+      <!-- Libro 1 -->
       <div class="reading-item">
-        <div class="reading-title d-flex justify-content-between align-items-center"
-             data-bs-toggle="collapse" data-bs-target="#desc1" aria-expanded="false">
+        <div class="reading-title" data-bs-toggle="collapse" data-bs-target="#desc1">
           <span><i class="bi bi-book icon-book me-2"></i><strong>La sociedad del cansancio</strong> – Byung-Chul Han</span>
           <i class="bi bi-chevron-right rotate" id="arrow1"></i>
         </div>
-        <div id="desc1" class="collapse">
-          <p class="mt-2">Una reflexión breve pero potente sobre la autoexplotación en tiempos de hiperproductividad.</p>
+        <div class="collapse" id="desc1">
+          <p class="mt-2">Reflexión sobre la autoexplotación y el rendimiento en la modernidad.</p>
         </div>
       </div>
-
+      <!-- Libro 2 -->
       <div class="reading-item">
-        <div class="reading-title d-flex justify-content-between align-items-center"
-             data-bs-toggle="collapse" data-bs-target="#desc2" aria-expanded="false">
+        <div class="reading-title" data-bs-toggle="collapse" data-bs-target="#desc2">
           <span><i class="bi bi-tablet icon-ebook me-2"></i><strong>The Ministry for the Future</strong> – Kim Stanley Robinson <em>(eBook)</em></span>
           <i class="bi bi-chevron-right rotate" id="arrow2"></i>
         </div>
-        <div id="desc2" class="collapse">
-          <p class="mt-2">Relato ambicioso sobre el cambio climático desde múltiples ángulos. Me dejó pensando en soluciones reales.</p>
+        <div class="collapse" id="desc2">
+          <p class="mt-2">Una novela densa e impactante sobre el cambio climático y geopolítica futura.</p>
         </div>
       </div>
     </div>
@@ -156,35 +164,34 @@
 
   <!-- Año 2024 -->
   <div class="mb-3">
-    <div class="year-header" data-bs-toggle="collapse" data-bs-target="#year2024" aria-expanded="false">
+    <div class="year-header" data-bs-toggle="collapse" data-bs-target="#year2024">
       <span>2024</span>
       <i class="bi bi-chevron-right rotate" id="icon2024"></i>
     </div>
     <div class="collapse" id="year2024">
+      <!-- Libro 3 -->
       <div class="reading-item">
-        <div class="reading-title d-flex justify-content-between align-items-center"
-             data-bs-toggle="collapse" data-bs-target="#desc3" aria-expanded="false">
+        <div class="reading-title" data-bs-toggle="collapse" data-bs-target="#desc3">
           <span><i class="bi bi-book icon-book me-2"></i><strong>El infinito en un junco</strong> – Irene Vallejo</span>
           <i class="bi bi-chevron-right rotate" id="arrow3"></i>
         </div>
-        <div id="desc3" class="collapse">
-          <p class="mt-2">Una historia fascinante del libro como objeto cultural. Saboreé cada página.</p>
+        <div class="collapse" id="desc3">
+          <p class="mt-2">Ensayo fascinante sobre la historia del libro y la lectura.</p>
         </div>
       </div>
-
+      <!-- Libro 4 -->
       <div class="reading-item">
-        <div class="reading-title d-flex justify-content-between align-items-center"
-             data-bs-toggle="collapse" data-bs-target="#desc4" aria-expanded="false">
+        <div class="reading-title" data-bs-toggle="collapse" data-bs-target="#desc4">
           <span><i class="bi bi-tablet icon-ebook me-2"></i><strong>Sapiens</strong> – Yuval Noah Harari <em>(eBook)</em></span>
           <i class="bi bi-chevron-right rotate" id="arrow4"></i>
         </div>
-        <div id="desc4" class="collapse">
-          <p class="mt-2">Una panorámica impresionante de la historia humana. Provocador y útil.</p>
+        <div class="collapse" id="desc4">
+          <p class="mt-2">Panorama amplio y claro de la evolución y cultura humana.</p>
         </div>
       </div>
     </div>
   </div>
-</div>
+</main>
 
 <!-- Footer -->
 <footer>
@@ -196,29 +203,32 @@
 <script>
   const themeToggle = document.getElementById('theme-toggle');
   const body = document.body;
+
   themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
-    themeToggle.innerHTML = body.classList.contains('dark-mode')
-      ? '<i class="bi bi-sun"></i>'
-      : '<i class="bi bi-moon"></i>';
+    const isDark = body.classList.contains('dark-mode');
+    themeToggle.innerHTML = isDark ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon"></i>';
   });
 
-  // Flechas de año
+  // Flechas año
   document.querySelectorAll('.year-header').forEach(header => {
-    const icon = header.querySelector('.rotate');
+    const icon = header.querySelector('i.rotate');
     const targetId = header.getAttribute('data-bs-target');
-    const target = document.querySelector(targetId);
-    target.addEventListener('show.bs.collapse', () => icon.classList.add('down'));
-    target.addEventListener('hide.bs.collapse', () => icon.classList.remove('down'));
+    const collapse = document.querySelector(targetId);
+    collapse.addEventListener('show.bs.collapse', () => icon.classList.add('down'));
+    collapse.addEventListener('hide.bs.collapse', () => icon.classList.remove('down'));
   });
 
-  // Flechas de reseña
-  for (let i = 1; i <= 4; i++) {
-    const arrow = document.getElementById(`arrow${i}`);
-    const desc = document.getElementById(`desc${i}`);
-    desc.addEventListener('show.bs.collapse', () => arrow.classList.add('down'));
-    desc.addEventListener('hide.bs.collapse', () => arrow.classList.remove('down'));
-  }
+  // Flechas por libro
+  document.querySelectorAll('.reading-title').forEach(title => {
+    const icon = title.querySelector('i.rotate');
+    const targetId = title.getAttribute('data-bs-target');
+    const collapse = document.querySelector(targetId);
+    if (collapse) {
+      collapse.addEventListener('show.bs.collapse', () => icon.classList.add('down'));
+      collapse.addEventListener('hide.bs.collapse', () => icon.classList.remove('down'));
+    }
+  });
 </script>
 </body>
 </html>
