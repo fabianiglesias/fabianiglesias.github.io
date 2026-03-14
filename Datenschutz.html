@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutzerklärung | Privacy Policy – Fabián Iglesias</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #fafaf8;
+      color: #1a1a1a;
+      font-family: Georgia, serif;
+      font-size: 16px;
+      line-height: 1.75;
+      padding: 2.5rem 1rem 4rem;
+    }
+    .container { max-width: 640px; margin: 0 auto; }
+    header { border-bottom: 2px solid #1a1a1a; padding-bottom: 1rem; margin-bottom: 2rem; }
+    header a { font-family: monospace; font-size: 0.85rem; color: #555; text-decoration: none; }
+    header a:hover { text-decoration: underline; }
+    h1 { font-size: 1.5rem; font-weight: normal; margin-top: 0.4rem; }
+    .lang-toggle { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
+    .lang-btn {
+      font-family: monospace; font-size: 0.75rem; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 0.25rem 0.65rem;
+      border: 1px solid #ccc; background: #eee; cursor: pointer; color: #555;
+    }
+    .lang-btn.active { background: #1a1a1a; color: #fafaf8; border-color: #1a1a1a; }
+    .lang-section { display: none; }
+    .lang-section.visible { display: block; }
+    h2 { font-size: 0.95rem; font-weight: bold; margin: 1.75rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    p { margin-bottom: 0.6rem; }
+    a { color: #1a1a1a; }
+    .meta { font-family: monospace; font-size: 0.78rem; color: #888; margin-top: 2.5rem; padding-top: 0.75rem; border-top: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <a href="/">&#8592; fabianiglesias.cl</a>
+    <h1>Datenschutzerkl&#228;rung / Privacy Policy</h1>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('de')">Deutsch</button>
+      <button class="lang-btn" onclick="setLang('en')">English</button>
+    </div>
+  </header>
+
+  <div id="lang-de" class="lang-section visible">
+    <h2>Verantwortlicher</h2>
+    <p>Fab&#237;an Andr&#233;s Iglesias Quilodr&#225;n &middot; Liebigstr. 6, 34125 Kassel &middot; <a href="mailto:info@fabianiglesias.cl">info@fabianiglesias.cl</a></p>
+
+    <h2>Hosting</h2>
+    <p>Diese Website wird &#252;ber <strong>GitHub Pages</strong> (GitHub Inc., USA) gehostet. Beim Seitenaufruf verarbeitet GitHub technische Zugriffsdaten (insbesondere IP-Adressen) zur Betriebssicherheit. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Daten&#252;bermittlung in die USA auf Basis des EU-U.S. Data Privacy Framework.</p>
+
+    <h2>Cookies &amp; Tracking</h2>
+    <p>Diese Website verwendet keine eigenen Cookies und kein Tracking oder Analysetools.</p>
+
+    <h2>Externe Links</h2>
+    <p>Die Website enth&#228;lt Links zu Google Docs, Google Scholar, ORCID und YouTube. Mit dem Anklicken dieser Links verlassen Sie diese Website; es gelten die Datenschutzerkl&#228;rungen der jeweiligen Anbieter.</p>
+
+    <h2>Ihre Rechte</h2>
+    <p>Sie haben das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), L&#246;schung (Art. 17), Einschr&#228;nkung der Verarbeitung (Art. 18) und Widerspruch (Art. 21 DSGVO) sowie das Recht zur Beschwerde bei der zust&#228;ndigen Aufsichtsbeh&#246;rde: <a href="https://datenschutz.hessen.de" target="_blank" rel="noopener">Hessischer Beauftragter f&#252;r Datenschutz und Informationsfreiheit</a>, Wiesbaden.</p>
+  </div>
+
+  <div id="lang-en" class="lang-section">
+    <h2>Data Controller</h2>
+    <p>Fab&#237;an Andr&#233;s Iglesias Quilodr&#225;n &middot; Liebigstr. 6, 34125 Kassel, Germany &middot; <a href="mailto:info@fabianiglesias.cl">info@fabianiglesias.cl</a></p>
+
+    <h2>Hosting</h2>
+    <p>This website is hosted via <strong>GitHub Pages</strong> (GitHub Inc., USA). When you visit this website, GitHub processes technical access data (including IP addresses) for operational security. Legal basis: Art. 6(1)(f) GDPR. Data transfers to the USA are based on the EU-U.S. Data Privacy Framework.</p>
+
+    <h2>Cookies &amp; Tracking</h2>
+    <p>This website uses no cookies of its own and no tracking or analytics tools.</p>
+
+    <h2>External Links</h2>
+    <p>This website contains links to Google Docs, Google Scholar, ORCID, and YouTube. Clicking these links takes you away from this website; the respective provider's privacy policy applies.</p>
+
+    <h2>Your Rights</h2>
+    <p>You have the right of access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), and objection (Art. 21 GDPR), as well as the right to lodge a complaint with the competent supervisory authority: <a href="https://datenschutz.hessen.de" target="_blank" rel="noopener">Hessischer Beauftragter f&#252;r Datenschutz und Informationsfreiheit</a>, Wiesbaden.</p>
+  </div>
+
+  <p class="meta">Stand / Last updated: M&#228;rz / March 2026</p>
+
+</div>
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('visible'));
+    document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('visible');
+    document.querySelector('[onclick="setLang(\'' + lang + '\')"]').classList.add('active');
+    document.documentElement.lang = lang;
+  }
+</script>
+</body>
+</html>
